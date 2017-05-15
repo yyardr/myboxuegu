@@ -1,10 +1,10 @@
 /*
-* pathsÅäÖÃ
-* */
+ * pathsé…ç½®
+ * */
 require.config({
     baseUrl:'/',
     paths: {
-        //Ã¿¸öÒ³Ãæ¶ÔÓ¦µÄÄ£¿é
+        //æ¯ä¸ªé¡µé¢å¯¹åº”çš„æ¨¡å—
         index: 'js/home/index',
         login: 'js/home/login',
         repass: 'js/home/repass',
@@ -21,16 +21,19 @@ require.config({
         csAdd2: 'js/course/course_add_step2',
         csAdd3: 'js/course/course_add_step3course',
 
-        //¹«¹²Ä£¿é
+        //å…¬å…±æ¨¡å—
         aside: 'js/common/aside',
         header: 'js/common/header',
         util: 'js/common/util',
 
-        //µÚÈı·½Ä£¿é
+        //ç¬¬ä¸‰æ–¹æ¨¡å—
+        //ä¾èµ–jquery çš„
         jquery: 'lib/jquery/jquery.min',
         bootstrap: 'lib/bootstrap/js/bootstrap.min',
+        jquery_form:'lib/jquery-form/jquery.form'
+        //ä¸ä¾èµ–jquery çš„
     },
-    //ÅäÖÃÆÕÍ¨Ä£¿éµÄÒÀÀµ
+    //é…ç½®æ™®é€šæ¨¡å—çš„ä¾èµ–
     shim:{
         bootstrap:{
             deps:['jquery']
@@ -38,8 +41,8 @@ require.config({
     }
 });
 /*
-* ¸ù¾İÓòÃû²»Í¬£¬¼ÓÔØ²»Í¬Ä£¿é
-* */
+ * æ ¹æ®åŸŸåä¸åŒï¼ŒåŠ è½½ä¸åŒæ¨¡å—
+ * */
 var obj = {
     '/': 'index',
     '/html/home/login.html': 'login',
