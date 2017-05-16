@@ -30,8 +30,10 @@ require.config({
         //依赖jquery 的
         jquery: 'lib/jquery/jquery.min',
         bootstrap: 'lib/bootstrap/js/bootstrap.min',
-        jquery_form:'lib/jquery-form/jquery.form'
+        jquery_form:'lib/jquery-form/jquery.form',
+        jquery_cookie:'lib/jquery-cookie/jquery.cookie',
         //不依赖jquery 的
+        nprogress:'lib/nprogress/nprogress',
     },
     //配置普通模块的依赖
     shim:{
@@ -53,7 +55,7 @@ var obj = {
     '/html/user/profile.html': 'usProfile',
     '/html/user/list.html': 'usList',
     '/html/course/add.html': 'csAdd',
-    '/html/course/list.html': 'usList',
+    '/html/course/list.html': 'csList',
     '/html/course/category_add.html': 'cgAdd',
     '/html/course/category_list.html': 'cgList',
     '/html/course/course_add_step1.html': 'csAdd1',
