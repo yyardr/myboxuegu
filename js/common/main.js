@@ -11,6 +11,7 @@ require.config({
         settings: 'js/home/settings',
         tcEdit: 'js/teacher/edit',
         tcList: 'js/teacher/list',
+        tcAdd: 'js/teacher/add',
         usList: 'js/user/list',
         usProfile: 'js/user/profile',
         csList: 'js/course/list',
@@ -34,12 +35,14 @@ require.config({
         jquery_cookie:'lib/jquery-cookie/jquery.cookie',
         //不依赖jquery 的
         nprogress:'lib/nprogress/nprogress',
+        template:'lib/artTemplate/template'
     },
     //配置普通模块的依赖
     shim:{
         bootstrap:{
             deps:['jquery']
-        }
+        },
+
     }
 });
 /*
@@ -52,6 +55,7 @@ var obj = {
     '/html/home/settings.html': 'settings',
     '/html/teacher/edit.html': 'tcEdit',
     '/html/teacher/list.html': 'tcList',
+    '/html/teacher/add.html': 'tcAdd',
     '/html/user/profile.html': 'usProfile',
     '/html/user/list.html': 'usList',
     '/html/course/add.html': 'csAdd',

@@ -1,5 +1,5 @@
 define(['jquery','jquery_cookie'], function ($,ud) {
-    return {
+    var util =  {
         //其他页面检测是否登录
         checkLoginStatus: function () {
             if (!$.cookie('PHPSESSID')){
@@ -13,6 +13,27 @@ define(['jquery','jquery_cookie'], function ($,ud) {
             }).on('ajaxStop', function () {
                 $(".overlay").hide();
             })
+        },
+        getSearch: function (searchKey) {
+            var searchObj = {},temp;
+            var searchArr = location.search.slice(1).split('&');
+            for(var i = 0; i < searchArr.length; i++) {
+                temp = searchArr[i].split('=');
+                searchObj[temp[0]] = temp[1];
+            }
+            return searchKey==null?searchObj:searchObj[searchKey];
+
+
         }
+    };
+   //传入所有要执行的方法名，格式范例：{'checkLoginStatus': [], 'fn2': [], ...}
+    return function (methods) {
+        var returns = {};
+        for(var key in methods){
+            returns[key] = util[key].apply(util,methods[key])
+        }
+        return returns;
     }
+
+
 })

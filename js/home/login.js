@@ -19,5 +19,7 @@ define(['bootstrap','jquery','jquery_form','jquery_cookie','nprogress','util'], 
         location.href = '/';
     };
     // 配置ajax请求的loading
-    util.loading();
+    var returns = util({
+        'loading':[]
+    });
 })
