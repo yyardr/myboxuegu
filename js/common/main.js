@@ -35,7 +35,7 @@ require.config({
         jquery_cookie:'lib/jquery-cookie/jquery.cookie',
         jquery_uploadify:'lib/uploadify/jquery.uploadify.min',
         jquery_Jcrop:'lib/jquery-Jcrop/js/Jcrop.min',
-
+        jquery_region:'lib/jquery-region/jquery.region',
         //不依赖jquery 的
         nprogress:'lib/nprogress/nprogress',
         template:'lib/artTemplate/template',
