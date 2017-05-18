@@ -1,4 +1,4 @@
-define(['bootstrap', 'aside', 'header', 'util', 'template','jquery_form','jquery_uploadify','jquery'], function (ud, ud, ud, util, template,ud,ud,$) {
+define(['bootstrap', 'aside', 'header', 'util', 'template','jquery_form','jquery_uploadify','jquery_Jcrop','jquery'], function (ud, ud, ud, util, template,ud,ud,ud,$) {
     var returns = util({
         'checkLoginStatus': [],
         'loading': [],
@@ -6,6 +6,8 @@ define(['bootstrap', 'aside', 'header', 'util', 'template','jquery_form','jquery
 
     });
     /*课程编辑页面*/
+    /*定义一个全局的变量存储图片裁剪的实例*/
+    var J = null;
     /*数据回显*/
     var cs_id = returns.getSearch;
     $.get('/v6/course/picture',{cs_id:cs_id}, function (data) {
@@ -29,10 +31,33 @@ define(['bootstrap', 'aside', 'header', 'util', 'template','jquery_form','jquery
                 var imgData = JSON.parse(data);
                 $(".preview img").attr('src',imgData.result.path);
                 $(".thumb img").attr('src',imgData.result.path);
-                location.href = '/html/course/course_add_step3.html?cs_id='+cs_id;
             }
         })
     }
+    /*点击裁剪按钮，初始化jquery_Jcrop插件,选取结果*/
+    $(document).on('click','#imgJcrop', function () {
+        $('.preview img').Jcrop({
+            aspectRatio: 2,
+            setSelect: [ 0,0,300,150 ],
+            bgColor: 'skyblue',
+            minSize:[300,150]
 
+        }, function () {
+            J = this;
+        });
+    });
+    /*点击保存按钮，获取选取结果并请求，跳转到第三步*/
+    $(document).on('click','#imgSave', function () {
+        var JcropResult = J.getSelection();
+        $.post("/v6/course/update/picture",{
+            cs_id:cs_id,
+            x:JcropResult.x,
+            y:JcropResult.y,
+            w:JcropResult.w,
+            h:JcropResult.h,
+        }, function () {
+            location.href = '/html/course/course_add_step3.html?cs_id='+cs_id;
 
+        })
+    });
 })

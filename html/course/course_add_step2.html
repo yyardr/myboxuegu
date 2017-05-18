@@ -5,6 +5,8 @@
     <title>学IT - 后台管理系统</title>
     <!-- 样式 -->
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/html/common/style.html')?>
+    <!--引入图片裁剪插件所需的样式文件-->
+    <link rel="stylesheet" href="/lib/jquery-Jcrop/css/Jcrop.css">
 </head>
 <body>
     
@@ -79,7 +81,10 @@
                     <button id="step2-uploadify" class="btn btn-success btn-sm">选择图片</button>
                 </div>
                 <div class="col-xs-2">
-                    <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                    <button id="imgJcrop" class="btn btn-warning btn-sm" >裁切图片</button>
+                </div>
+                <div class="col-xs-2">
+                    <button id="imgSave" class="btn btn-success btn-sm" >保存</button>
                 </div>
             </div>
         </div>

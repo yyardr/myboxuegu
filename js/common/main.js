@@ -34,6 +34,7 @@ require.config({
         jquery_form:'lib/jquery-form/jquery.form',
         jquery_cookie:'lib/jquery-cookie/jquery.cookie',
         jquery_uploadify:'lib/uploadify/jquery.uploadify.min',
+        jquery_Jcrop:'lib/jquery-Jcrop/js/Jcrop.min',
 
         //不依赖jquery 的
         nprogress:'lib/nprogress/nprogress',
@@ -45,6 +46,9 @@ require.config({
             deps:['jquery']
         },
         jquery_uploadify:{
+            deps:['jquery']
+        },
+        jquery_Jcrop:{
             deps:['jquery']
         }
 
