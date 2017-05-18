@@ -20,7 +20,7 @@ require.config({
         cgList: 'js/course/category_list',
         csAdd1: 'js/course/course_add_step1',
         csAdd2: 'js/course/course_add_step2',
-        csAdd3: 'js/course/course_add_step3course',
+        csAdd3: 'js/course/course_add_step3',
 
         //公共模块
         aside: 'js/common/aside',
@@ -33,15 +33,20 @@ require.config({
         bootstrap: 'lib/bootstrap/js/bootstrap.min',
         jquery_form:'lib/jquery-form/jquery.form',
         jquery_cookie:'lib/jquery-cookie/jquery.cookie',
+        jquery_uploadify:'lib/uploadify/jquery.uploadify.min',
+
         //不依赖jquery 的
         nprogress:'lib/nprogress/nprogress',
-        template:'lib/artTemplate/template'
+        template:'lib/artTemplate/template',
     },
     //配置普通模块的依赖
     shim:{
         bootstrap:{
             deps:['jquery']
         },
+        jquery_uploadify:{
+            deps:['jquery']
+        }
 
     }
 });
