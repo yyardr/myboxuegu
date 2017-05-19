@@ -36,9 +36,12 @@ require.config({
         jquery_uploadify:'lib/uploadify/jquery.uploadify.min',
         jquery_Jcrop:'lib/jquery-Jcrop/js/Jcrop.min',
         jquery_region:'lib/jquery-region/jquery.region',
+        jquery_bootstrap_datepicker:'lib/jquery-bootstrap-datepicker/js/bootstrap-datepicker.min',
+        jquery_bootstrap_datepicker_CN:'lib/jquery-bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         //不依赖jquery 的
         nprogress:'lib/nprogress/nprogress',
         template:'lib/artTemplate/template',
+        ckeditor:'lib/ckeditor/ckeditor',
     },
     //配置普通模块的依赖
     shim:{
@@ -50,6 +53,12 @@ require.config({
         },
         jquery_Jcrop:{
             deps:['jquery']
+        },
+        jquery_bootstrap_datepicker_CN:{
+            deps:['jquery','jquery_bootstrap_datepicker']
+        },
+        ckeditor:{
+            exports:'CKEDITOR',
         }
 
     }
